@@ -109,7 +109,11 @@ async function main() {
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  const bucket = process.env.R2_BUCKET || "tbbt-media";
+  const bucket = process.env.R2_BUCKET;
+
+  if (!bucket) {
+    throw new Error(".env.local 缺少 R2_BUCKET");
+  }
 
   if (!url || !key) {
     throw new Error(
