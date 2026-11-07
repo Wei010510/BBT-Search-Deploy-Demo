@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f3f3f5;
+  --ink: #1a1a1c;
+  --muted: #5c5c66;
+  --card: #ffffff;
+  --line: #d9d9e0;
+  --accent: #2f5d50;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 0.6px, transparent 0.6px);
+  background-size: 3px 3px;
+}
+
+.title-art {
+  background: linear-gradient(
+    105deg,
+    #ff4d6d 0%,
+    #ff9f1c 28%,
+    #2ec4b6 62%,
+    #4361ee 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 10px 40px rgba(255, 77, 109, 0.12);
+}
